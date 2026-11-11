@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Remove Twitter Link Tracking",
+  "version": "1.0",
+  "description": "Removes tracking info when copying Twitter/X links.",
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "*://*.twitter.com/*",
+    "*://*.x.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.twitter.com/*",
+        "*://*.x.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
